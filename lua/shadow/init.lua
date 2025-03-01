@@ -2,9 +2,9 @@ local M = {}
 
 local colors = {
 	bg = { gui = "#1D2326", cterm = 0 },
-	fg = { gui = "#E6E7E6", cterm = 7 },
-	black = { gui = "#242B2D", cterm = 0 },
-	black_bright = { gui = "#485457", cterm = 8 },
+	fg = { gui = "#acadac", cterm = 7 },
+	black = { gui = "#343d40", cterm = 0 },
+	black_bright = { gui = "#5f646e", cterm = 8 },
 	red = { gui = "#BC8F7D", cterm = 1 },
 	red_bright = { gui = "#D4A394", cterm = 9 },
 	green = { gui = "#96B088", cterm = 2 },
@@ -23,11 +23,31 @@ local colors = {
 
 local highlights = {
 	-- Basic Editor UI
-	Normal = { fg = colors.fg.gui, bg = colors.bg.gui, ctermfg = colors.fg.cterm, ctermbg = colors.bg.cterm }, -- Default text and background
+	Normal = {
+		fg = colors.fg.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.bg.cterm,
+	}, -- Default text and background
 	SignColumn = { bg = colors.bg.gui, ctermbg = colors.bg.cterm }, -- Column where signs (like git changes) are displayed
-	MsgArea = { fg = colors.fg.gui, bg = colors.bg.gui, ctermfg = colors.fg.cterm, ctermbg = colors.bg.cterm }, -- Area for messages and cmdline
-	ModeMsg = { fg = colors.fg.gui, bg = colors.bg.gui, ctermfg = colors.fg.cterm, ctermbg = colors.bg.cterm }, -- Mode messages (e.g., "-- INSERT --")
-	MsgSeparator = { fg = colors.fg.gui, bg = colors.bg.gui, ctermfg = colors.fg.cterm, ctermbg = colors.bg.cterm }, -- Separator for scrolled messages
+	MsgArea = {
+		fg = colors.fg.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.bg.cterm,
+	}, -- Area for messages and cmdline
+	ModeMsg = {
+		fg = colors.fg.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.bg.cterm,
+	}, -- Mode messages (e.g., "-- INSERT --")
+	MsgSeparator = {
+		fg = colors.fg.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.bg.cterm,
+	}, -- Separator for scrolled messages
 	MatchParen = {
 		fg = colors.cyan.gui,
 		bg = colors.black_bright.gui,
@@ -39,7 +59,10 @@ local highlights = {
 	WinSeparator = { fg = colors.black.gui, ctermfg = colors.black.cterm },
 
 	-- Line Numbers and Cursor
-	LineNr = { fg = colors.black_bright.gui, ctermfg = colors.black_bright.cterm }, -- Line numbers
+	LineNr = {
+		fg = colors.black_bright.gui,
+		ctermfg = colors.black_bright.cterm,
+	}, -- Line numbers
 	CursorLineNr = { fg = colors.green.gui, ctermfg = colors.green.cterm }, -- Current line number
 	CursorLine = { bg = colors.bg.gui, ctermbg = colors.bg.cterm }, -- Line the cursor is on
 	CursorColumn = { bg = colors.bg.gui, ctermbg = colors.bg.cterm }, -- Column the cursor is on
@@ -71,7 +94,12 @@ local highlights = {
 	},
 
 	-- Statusline
-	StatusLine = { fg = colors.fg.gui, bg = colors.bg.gui, ctermfg = colors.fg.cterm, ctermbg = colors.bg.cterm }, -- Active statusline
+	StatusLine = {
+		fg = colors.fg.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.bg.cterm,
+	}, -- Active statusline
 	StatusLineNC = {
 		fg = colors.black_bright.gui,
 		bg = colors.bg.gui,
@@ -80,7 +108,10 @@ local highlights = {
 	}, -- Inactive statusline
 
 	-- Syntax Highlighting
-	Comment = { fg = colors.black_bright.gui, ctermfg = colors.black_bright.cterm }, -- Comments
+	Comment = {
+		fg = colors.black_bright.gui,
+		ctermfg = colors.black_bright.cterm,
+	}, -- Comments
 	Constant = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm }, -- Any constant
 	String = { fg = colors.green.gui, ctermfg = colors.green.cterm }, -- String literals
 	Identifier = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm }, -- Variable names
@@ -93,7 +124,12 @@ local highlights = {
 	Special = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm }, -- Special symbols
 
 	-- Popup Menu
-	Pmenu = { fg = colors.fg.gui, bg = colors.black.gui, ctermfg = colors.fg.cterm, ctermbg = colors.black.cterm }, -- Popup menu normal item
+	Pmenu = {
+		fg = colors.fg.gui,
+		bg = colors.black.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.black.cterm,
+	}, -- Popup menu normal item
 	PmenuSel = {
 		fg = colors.bg.gui,
 		bg = colors.cyan.gui,
@@ -116,7 +152,12 @@ local highlights = {
 		ctermfg = colors.black.cterm,
 		ctermbg = colors.black.cterm,
 	}, -- Floating window border
-	NormalFloat = { fg = colors.fg.gui, bg = colors.black.gui, ctermfg = colors.fg.cterm, ctermbg = colors.black.cterm }, -- Normal text in floating windows
+	NormalFloat = {
+		fg = colors.fg.gui,
+		bg = colors.black.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.black.cterm,
+	}, -- Normal text in floating windows
 
 	-- Diagnostics
 	DiagnosticError = { fg = colors.red.gui, ctermfg = colors.red.cterm }, -- Error diagnostics
@@ -131,19 +172,43 @@ local highlights = {
 
 	-- Status line
 	StatusLineMode = { fg = colors.blue.gui, ctermfg = colors.blue.cterm }, -- Mode indicator
-	StatusLinePath = { fg = colors.black_bright.gui, ctermfg = colors.black_bright.cterm }, -- File path
+	StatusLinePath = {
+		fg = colors.black_bright.gui,
+		ctermfg = colors.black_bright.cterm,
+	}, -- File path
 	StatusLineFlags = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm }, -- File flags
-	StatusLineFileType = { fg = colors.black_bright.gui, ctermfg = colors.black_bright.cterm }, -- File type
-	StatusLinePosition = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm }, -- Line and column
+	StatusLineFileType = {
+		fg = colors.black_bright.gui,
+		ctermfg = colors.black_bright.cterm,
+	}, -- File type
+	StatusLinePosition = {
+		fg = colors.magenta.gui,
+		ctermfg = colors.magenta.cterm,
+	}, -- Line and column
 	StatusLinePercent = { fg = colors.green.gui, ctermfg = colors.green.cterm }, -- Percentage
-	StatusLineModified = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm }, -- Color for modified icon
+	StatusLineModified = {
+		fg = colors.yellow.gui,
+		ctermfg = colors.yellow.cterm,
+	}, -- Color for modified icon
 
 	StatusLineModeNormal = { fg = colors.blue.gui, ctermfg = colors.blue.cterm },
-	StatusLineModeInsert = { fg = colors.green.gui, ctermfg = colors.green.cterm },
-	StatusLineModeVisual = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm },
-	StatusLineModeCommand = { fg = colors.green.gui, ctermfg = colors.green.cterm },
+	StatusLineModeInsert = {
+		fg = colors.green.gui,
+		ctermfg = colors.green.cterm,
+	},
+	StatusLineModeVisual = {
+		fg = colors.yellow.gui,
+		ctermfg = colors.yellow.cterm,
+	},
+	StatusLineModeCommand = {
+		fg = colors.green.gui,
+		ctermfg = colors.green.cterm,
+	},
 	StatusLineModeReplace = { fg = colors.red.gui, ctermfg = colors.red.cterm },
-	StatusLineModeTerminal = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
+	StatusLineModeTerminal = {
+		fg = colors.cyan.gui,
+		ctermfg = colors.cyan.cterm,
+	},
 
 	-- nvim-telescope
 	TelescopeNormal = {
@@ -170,12 +235,22 @@ local highlights = {
 		ctermfg = colors.fg.cterm,
 		ctermbg = colors.black.cterm,
 	}, -- Selected item
-	TelescopeMatching = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm }, -- Matched characters in search
+	TelescopeMatching = {
+		fg = colors.yellow.gui,
+		ctermfg = colors.yellow.cterm,
+	}, -- Matched characters in search
 
 	-- nvim-cmp
 	CmpItemAbbr = { fg = colors.fg.gui, ctermfg = colors.fg.cterm }, -- Completion menu text
-	CmpItemAbbrDeprecated = { fg = colors.black_bright.gui, ctermfg = colors.black_bright.cterm, strikethrough = true }, -- Deprecated items
-	CmpItemMenu = { fg = colors.black_bright.gui, ctermfg = colors.black_bright.cterm }, -- Menu text (e.g., [LSP])
+	CmpItemAbbrDeprecated = {
+		fg = colors.black_bright.gui,
+		ctermfg = colors.black_bright.cterm,
+		strikethrough = true,
+	}, -- Deprecated items
+	CmpItemMenu = {
+		fg = colors.black_bright.gui,
+		ctermfg = colors.black_bright.cterm,
+	}, -- Menu text (e.g., [LSP])
 
 	CmpItemKindVariable = {
 		fg = colors.magenta.gui,
@@ -237,8 +312,18 @@ local highlights = {
 		ctermfg = colors.cyan.cterm,
 		ctermbg = colors.bg.cterm,
 	}, -- Snippets
-	CmpItemKindFile = { fg = colors.fg.gui, bg = colors.bg.gui, ctermfg = colors.fg.cterm, ctermbg = colors.bg.cterm }, -- Files
-	CmpItemKindFolder = { fg = colors.fg.gui, bg = colors.bg.gui, ctermfg = colors.fg.cterm, ctermbg = colors.bg.cterm }, -- Folders
+	CmpItemKindFile = {
+		fg = colors.fg.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.bg.cterm,
+	}, -- Files
+	CmpItemKindFolder = {
+		fg = colors.fg.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.bg.cterm,
+	}, -- Folders
 	CmpItemKindKeyword = {
 		fg = colors.magenta.gui,
 		bg = colors.bg.gui,
@@ -286,10 +371,16 @@ local highlights = {
 	TSAttribute = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
 	TSBoolean = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
 	TSCharacter = { fg = colors.green.gui, ctermfg = colors.green.cterm },
-	TSComment = { fg = colors.black_bright.gui, ctermfg = colors.black_bright.cterm },
+	TSComment = {
+		fg = colors.black_bright.gui,
+		ctermfg = colors.black_bright.cterm,
+	},
 	TSConditional = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
 	TSConstant = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
-	TSConstBuiltin = { fg = colors.cyan_bright.gui, ctermfg = colors.cyan_bright.cterm },
+	TSConstBuiltin = {
+		fg = colors.cyan_bright.gui,
+		ctermfg = colors.cyan_bright.cterm,
+	},
 	TSConstMacro = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
 	TSConstructor = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm },
 	TSError = { fg = colors.red.gui, ctermfg = colors.red.cterm },
@@ -297,12 +388,21 @@ local highlights = {
 	TSField = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
 	TSFloat = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
 	TSFunction = { fg = colors.blue.gui, ctermfg = colors.blue.cterm },
-	TSFuncBuiltin = { fg = colors.blue_bright.gui, ctermfg = colors.blue_bright.cterm },
+	TSFuncBuiltin = {
+		fg = colors.blue_bright.gui,
+		ctermfg = colors.blue_bright.cterm,
+	},
 	TSFuncMacro = { fg = colors.blue.gui, ctermfg = colors.blue.cterm },
 	TSInclude = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
 	TSKeyword = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
-	TSKeywordFunction = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
-	TSKeywordOperator = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
+	TSKeywordFunction = {
+		fg = colors.magenta.gui,
+		ctermfg = colors.magenta.cterm,
+	},
+	TSKeywordOperator = {
+		fg = colors.magenta.gui,
+		ctermfg = colors.magenta.cterm,
+	},
 	TSLabel = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm },
 	TSMethod = { fg = colors.blue.gui, ctermfg = colors.blue.cterm },
 	TSNamespace = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm },
@@ -310,51 +410,99 @@ local highlights = {
 	TSNumber = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
 	TSOperator = { fg = colors.fg.gui, ctermfg = colors.fg.cterm },
 	TSParameter = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
-	TSParameterReference = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
+	TSParameterReference = {
+		fg = colors.magenta.gui,
+		ctermfg = colors.magenta.cterm,
+	},
 	TSProperty = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
 	TSPunctDelimiter = { fg = colors.fg.gui, ctermfg = colors.fg.cterm },
 	TSPunctBracket = { fg = colors.fg.gui, ctermfg = colors.fg.cterm },
 	TSPunctSpecial = { fg = colors.fg.gui, ctermfg = colors.fg.cterm },
 	TSRepeat = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
 	TSString = { fg = colors.green.gui, ctermfg = colors.green.cterm },
-	TSStringRegex = { fg = colors.green_bright.gui, ctermfg = colors.green_bright.cterm },
-	TSStringEscape = { fg = colors.green_bright.gui, ctermfg = colors.green_bright.cterm },
+	TSStringRegex = {
+		fg = colors.green_bright.gui,
+		ctermfg = colors.green_bright.cterm,
+	},
+	TSStringEscape = {
+		fg = colors.green_bright.gui,
+		ctermfg = colors.green_bright.cterm,
+	},
 	TSSymbol = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
 	TSTag = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm },
 	TSTagDelimiter = { fg = colors.fg.gui, ctermfg = colors.fg.cterm },
 	TSText = { fg = colors.fg.gui, ctermfg = colors.fg.cterm },
 	TSTitle = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm },
 	TSType = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
-	TSTypeBuiltin = { fg = colors.cyan_bright.gui, ctermfg = colors.cyan_bright.cterm },
+	TSTypeBuiltin = {
+		fg = colors.cyan_bright.gui,
+		ctermfg = colors.cyan_bright.cterm,
+	},
 	TSVariable = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
 
 	-- mini.starter
 	MiniStarterHeader = { fg = colors.blue.gui, ctermfg = colors.blue.cterm }, -- Header text
 	MiniStarterItem = { fg = colors.fg.gui, ctermfg = colors.fg.cterm }, -- Item text
-	MiniStarterItemBullet = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm }, -- Bullet points
-	MiniStarterItemPrefix = { fg = colors.green.gui, ctermfg = colors.green.cterm }, -- Prefix text
-	MiniStarterSection = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm }, -- Section text
+	MiniStarterItemBullet = {
+		fg = colors.yellow.gui,
+		ctermfg = colors.yellow.cterm,
+	}, -- Bullet points
+	MiniStarterItemPrefix = {
+		fg = colors.green.gui,
+		ctermfg = colors.green.cterm,
+	}, -- Prefix text
+	MiniStarterSection = {
+		fg = colors.magenta.gui,
+		ctermfg = colors.magenta.cterm,
+	}, -- Section text
 	MiniStarterQuery = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm }, -- Query text
 	MiniStarterFooter = { fg = colors.red.gui, ctermfg = colors.red.cterm }, -- Footer text
 
 	-- which-key.nvim
 	WhichKey = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
-	WhichKeySeparator = { fg = colors.black_bright.gui, ctermfg = colors.black_bright.cterm },
+	WhichKeySeparator = {
+		fg = colors.black_bright.gui,
+		ctermfg = colors.black_bright.cterm,
+	},
 	WhichKeyGroup = { fg = colors.blue.gui, ctermfg = colors.blue.cterm },
 	WhichKeyDesc = { fg = colors.green.gui, ctermfg = colors.green.cterm },
 	WhichKeyFloat = { bg = colors.black.gui, ctermbg = colors.black.cterm },
 	WhichKeyValue = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
 
 	-- NvimTree
-	NvimTreeNormal = { fg = colors.fg.gui, bg = colors.bg.gui, ctermfg = colors.fg.cterm, ctermbg = colors.bg.cterm },
+	NvimTreeNormal = {
+		fg = colors.fg.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.bg.cterm,
+	},
 	NvimTreeFolderName = { fg = colors.blue.gui, ctermfg = colors.blue.cterm },
-	NvimTreeOpenedFolderName = { fg = colors.blue_bright.gui, ctermfg = colors.blue_bright.cterm },
-	NvimTreeEmptyFolderName = { fg = colors.black_bright.gui, ctermfg = colors.black_bright.cterm },
-	NvimTreeIndentMarker = { fg = colors.black_bright.gui, ctermfg = colors.black_bright.cterm },
-	NvimTreeVertSplit = { fg = colors.black.gui, bg = colors.bg.gui, ctermfg = colors.black.cterm, ctermbg = colors.bg.cterm },
+	NvimTreeOpenedFolderName = {
+		fg = colors.blue_bright.gui,
+		ctermfg = colors.blue_bright.cterm,
+	},
+	NvimTreeEmptyFolderName = {
+		fg = colors.black_bright.gui,
+		ctermfg = colors.black_bright.cterm,
+	},
+	NvimTreeIndentMarker = {
+		fg = colors.black_bright.gui,
+		ctermfg = colors.black_bright.cterm,
+	},
+	NvimTreeVertSplit = {
+		fg = colors.black.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.black.cterm,
+		ctermbg = colors.bg.cterm,
+	},
 	NvimTreeRootFolder = { fg = colors.red.gui, ctermfg = colors.red.cterm },
 	NvimTreeSymlink = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
-	NvimTreeStatuslineNc = { fg = colors.black_bright.gui, bg = colors.bg.gui, ctermfg = colors.black_bright.cterm, ctermbg = colors.bg.cterm },
+	NvimTreeStatuslineNc = {
+		fg = colors.black_bright.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.black_bright.cterm,
+		ctermbg = colors.bg.cterm,
+	},
 }
 
 M.colors = colors
