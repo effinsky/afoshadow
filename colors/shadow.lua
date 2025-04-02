@@ -1,1 +1,1 @@
-require("shadow").setup()
+require("afo_shadow").setup()
