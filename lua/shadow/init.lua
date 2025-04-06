@@ -2,6 +2,7 @@ local M = {}
 
 local colors = {
 	bg = { gui = "#1D2326", cterm = 0 },
+	bg_bright = { gui = "#242c30", cterm = 0 },
 	fg = { gui = "#acadac", cterm = 7 },
 	black = { gui = "#343d40", cterm = 0 },
 	black_bright = { gui = "#5f646e", cterm = 8 },
@@ -64,7 +65,7 @@ local highlights = {
 		ctermfg = colors.black_bright.cterm,
 	}, -- Line numbers
 	CursorLineNr = { fg = colors.green.gui, ctermfg = colors.green.cterm }, -- Current line number
-	CursorLine = { bg = colors.bg.gui, ctermbg = colors.bg.cterm }, -- Line the cursor is on
+	CursorLine = { bg = colors.bg_bright.gui, ctermbg = colors.bg_bright.cterm }, -- Line the cursor is on
 	CursorColumn = { bg = colors.bg.gui, ctermbg = colors.bg.cterm }, -- Column the cursor is on
 
 	-- Search and Selection
