@@ -148,10 +148,10 @@ local highlights = {
 		ctermbg = colors.black.cterm,
 	}, -- Floating window title
 	FloatBorder = {
-		fg = colors.black.gui,
-		bg = colors.black.gui,
-		ctermfg = colors.black.cterm,
-		ctermbg = colors.black.cterm,
+		fg = colors.fg.gui,
+		bg = colors.bg.gui,
+		ctermfg = colors.fg.cterm,
+		ctermbg = colors.bg.cterm,
 	}, -- Floating window border
 	NormalFloat = {
 		fg = colors.fg.gui,
@@ -375,6 +375,7 @@ local highlights = {
 	TSComment = {
 		fg = colors.black_bright.gui,
 		ctermfg = colors.black_bright.cterm,
+		italic = true,
 	},
 	TSConditional = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
 	TSConstant = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
@@ -388,7 +389,11 @@ local highlights = {
 	TSException = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
 	TSField = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
 	TSFloat = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
-	TSFunction = { fg = colors.blue.gui, ctermfg = colors.blue.cterm },
+	TSFunction = {
+		fg = colors.blue.gui,
+		ctermfg = colors.blue.cterm,
+		-- italic = true,
+	},
 	TSFuncBuiltin = {
 		fg = colors.blue_bright.gui,
 		ctermfg = colors.blue_bright.cterm,
@@ -405,7 +410,11 @@ local highlights = {
 		ctermfg = colors.magenta.cterm,
 	},
 	TSLabel = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm },
-	TSMethod = { fg = colors.blue.gui, ctermfg = colors.blue.cterm },
+	TSMethod = {
+		fg = colors.blue.gui,
+		ctermfg = colors.blue.cterm,
+		-- italic = true,
+	},
 	TSNamespace = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm },
 	TSNone = { fg = colors.fg.gui, ctermfg = colors.fg.cterm },
 	TSNumber = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
@@ -434,12 +443,20 @@ local highlights = {
 	TSTagDelimiter = { fg = colors.fg.gui, ctermfg = colors.fg.cterm },
 	TSText = { fg = colors.fg.gui, ctermfg = colors.fg.cterm },
 	TSTitle = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm },
-	TSType = { fg = colors.cyan.gui, ctermfg = colors.cyan.cterm },
+	TSType = {
+		fg = colors.cyan.gui,
+		ctermfg = colors.cyan.cterm,
+		-- italic = true,
+	},
 	TSTypeBuiltin = {
 		fg = colors.cyan_bright.gui,
 		ctermfg = colors.cyan_bright.cterm,
 	},
-	TSVariable = { fg = colors.magenta.gui, ctermfg = colors.magenta.cterm },
+	TSVariable = {
+		fg = colors.magenta.gui,
+		ctermfg = colors.magenta.cterm,
+		italic = true,
+	},
 
 	-- mini.starter
 	MiniStarterHeader = { fg = colors.blue.gui, ctermfg = colors.blue.cterm }, -- Header text
