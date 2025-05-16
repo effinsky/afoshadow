@@ -392,7 +392,6 @@ local highlights = {
 	TSFunction = {
 		fg = colors.blue.gui,
 		ctermfg = colors.blue.cterm,
-		-- italic = true,
 	},
 	TSFuncBuiltin = {
 		fg = colors.blue_bright.gui,
@@ -413,7 +412,6 @@ local highlights = {
 	TSMethod = {
 		fg = colors.blue.gui,
 		ctermfg = colors.blue.cterm,
-		-- italic = true,
 	},
 	TSNamespace = { fg = colors.yellow.gui, ctermfg = colors.yellow.cterm },
 	TSNone = { fg = colors.fg.gui, ctermfg = colors.fg.cterm },
@@ -446,7 +444,6 @@ local highlights = {
 	TSType = {
 		fg = colors.cyan.gui,
 		ctermfg = colors.cyan.cterm,
-		-- italic = true,
 	},
 	TSTypeBuiltin = {
 		fg = colors.cyan_bright.gui,
